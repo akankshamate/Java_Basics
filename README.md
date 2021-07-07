@@ -129,7 +129,7 @@ A static variable can be accessed directly by the class name and doesn’t need 
 
 ## Instance Variable
 Different copies to be shared by all instances of the class
-A instance variable can be accessed only through object 
+An instance variable can be accessed only through object 
 
 ## Static Method
 A static method can call only other static methods and can not call a non-static method from it.
