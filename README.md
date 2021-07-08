@@ -1,46 +1,39 @@
 # Java_Basics
 **Install Packages**
-1. JDK(Java Development Kit) 1.8
-2. JRE (Java Runtime Environment)
+1. JDK(Java Development Kit) 1.11
+2. JRE (Java Runtime Environment)1.11
 
 **OS**
 Linux(Ubuntu)
 
 **IDE**
-gedit 
+Eclipse 
 
-**Compile the code on terminal**
-Javac Filename.java
 
-After compiling it creates .class file 
-Run the .class file which has main method then only it runs successfully otherwise it gives error:main method not found
-
-**Run the code on terminal**
-Java classname
+**How to Run the code on terminal**
+In java 11 we can directly run the code without using compiler. 
+e.g. java Filename.java
 
 ## Primitive Data Types in java
-In Java, the primitive data types are the predefined data types of Java. They specify the size and type of any standard values.
+main()
+In DataType Program I have created Some Variables of Different Types of values.
+The range is defined for each and every data type.
+If our value will get incremented beyond the largest range value then the output will become smallest range value because it gets round up while incrementing number.
 
-There are 8 types of Java primitive data types namely:
+Character:
+for char if we assign character to an integer datatype then ASCII value get printed out of that character and vice-versa.
+a-z=97-122
+A-Z=65-90
 
-a. int   -The maximum values of integer is 2^31 and the minimum value is -2^31.
+boolean:
+boolean returns only two values true or false.
+Every non zero value is true i.e. ...-3,-2,-1,1,2,3... 
+only 0 is false
 
-b. float -float is used for storing decimal values. Its default value is 0.0f and has a size of 4 bytes. It has an infinite value range.
 
-c. char  -Its default value is ‘\u0000’ with the max value being ‘\uffff’ and has a size of 2 bytes.
-
-d. boolean  -boolean datatype can have only two values ‘true’ and ‘false’. It has a default value of ‘false’ and a size of 1 byte. 
-
-e. byte	 -It’s an 8 bit signed two’s complement . The range of values are -128 to 127.
-
-f. short -It’s 2 times smaller than the integer datatype.Its minimum range is -32,768 and maximum range is 32,767.
-
-g. long  -It is a 64 bit integer and ranges from -2^63 to +(2^63)-1.
-
-h. double -It has a range of -2^31 to (2^31)-1.
-
-##Wrapper Classes
-wrapper classes are objects encapsulating primitive Java types.
+## Wrapper Classes
+wrapper classes are like Chocolate if we wrap up choclate into wrapper then this will become autoboxing.
+If we open that wrapper and getting out that choclate then this will become unboxing.
 
 Each Java primitive has a corresponding wrapper:
 
@@ -49,94 +42,134 @@ Boolean, Byte, Short, Character, Integer, Long, Float, Double
 
 These are all defined in the java.lang package, hence we don't need to import them manually.
 
-##Methods Of Wrapper Classes
-For AutoBoxing
-Integer obj1 = new Integer(1);
+In main()
+I have write some primitive data types and passing this as a argument to the wrapper class's constructor by creating object and finally print that object.
+    int i=100;
+		Integer iObj=new Integer(i);
+		System.out.println("Integer Object:"+iObj);
 
-Integer Obj2 = Integer.valueOf(1);
+All of the numeric wrapper classes are subclasses of the abstract class Number.
+Only Character Class implements java.io.Serializable
 
-For Unboxing
-int val = object.intValue();
 
-##Operators In java
-1. Java Arithmetic Operators
 
-Operator	Operation
-+		Addition
--		Subtraction
-*		Multiplication
-/		Division
-%		Modulo Operation (Remainder after division)
+## Methods Of Wrapper Classes
+main()
+   For AutoBoxing
+   Integer obj1 = new Integer(1);
 
-2. Java Assignment Operators
+   Integer Obj2 = Integer.valueOf(1);
 
-Operator	Example		Internally
-=		      a = b;		a = b;
-+=		    a += b;		a = a + b;
--=		    a -= b;		a = a - b;
-*=		    a *= b;		a = a * b;
-/=		    a /= b;		a = a / b;
-%=		    a %= b;		a = a % b;
+   For Unboxing
+   int val = object.intValue();
 
-3. Java Relational Operators
+   We can Convert String to any wrapper classes except String to character.
+   Integer intObj = new Integer("AnyStringValue");
 
-Operator	Description			          Example
-==		    Is Equal To			          3 == 5 returns false
-!=		    Not Equal To			        3 != 5 returns true
->		      Greater Than			        3 > 5 returns false
-<		      Less Than			            3 < 5 returns true
->=		    Greater Than or Equal To	3 >= 5 returns false
-<=		    Less Than or Equal To		  3 <= 5 returns true
+   also we can convert wrapper to String by using toString() method.
+   String intStr = intObj.toString();
 
-4. Java Logical Operators
-Operator		        Example				                Meaning
-&& (Logical AND)	  expression1 && expression2	  true only if both expression1 and expression2 are true
-|| (Logical OR)		  expression1 || expression2	  true if either expression1 or expression2 is true
-! (Logical NOT)		  !expression			              true if expression is false and vice versa
 
-5. Java Unary Operators
+## Operators In java
+**class Operators**
+main()
+//Arithmetic Operators
+Taking two variables a and b and perform arithmetic operations(+,-,/,*,%) on that and store answer in ans variable. 
 
-Operator	Meaning
-+		  Unary plus: not necessary to use since numbers are positive without using it
--		  Unary minus: inverts the sign of an expression
-++		Increment operator: increments value by 1
---		Decrement operator: decrements value by 1
-!		  Logical complement operator: inverts the value of a boolean
+//Assignment Operator
+Assign 10 value in a i.e. a=10;
+Assign b's value in a i.e. a=b;
+Increment b's value by 10 i.e. b+=10 => internally b=b+10
 
-6. Java Bitwise Operators
+//Unary Operator
+If the value is a=10;
+++a= 11 (In this case first increment has done in memory and return that value to variable)
+a++ =10 (In this case first value returns to the variable and then incrementing the value in memory)
 
-Operator	Description
-~		      Bitwise Complement
-<<		    Left Shift
->>		    Right Shift
->>>		    Unsigned Right Shift
-&		      Bitwise AND
-^		      Bitwise exclusive OR
+//Relational Operators
+Relational operator always returns boolean value.(<,>,<=,>=,==)
+    num1=10;
+		num2=20;
+		boolean ans1;
+		ans=num1<num2;
+		System.out.println("10<20:"+ans1);//returns true
+    
+//Bitwise OPerator
+Bitwise operator works on logical truth table (&(AND),|(OR),^(XOR))
+only float and double values are not used for bitwise operator remaining all are suitable.
+    ans=10 & 20;
+		System.out.println("10 & 20:"+ans);     1 0 1 0  
+                                                     &
+                                          1 0 1 0 0
+                                          ___________
+                                          0 0 0 0 0 = 0
+     Hence Answer is 0.
+     
+**class BitwiseComp**
+For Complement we use(~) sign which is equivalent to negation in truth table
 
-7. Java instanceof Operator
+**InstanceOf program**
+class Facebook
+main()
+    Created object of Instagram Class
+    passing object as an arguement to the static method of Instagram class
+    Calling Instance method
+    
+ class Instagram
+ static void posts(Instagram obj)
+     to check that obj is instanceOf Instagram or not here I use ternary Operator
+     String res=(akankshaa_940 instanceof Instagram)?
+     instanceOf operator always returns boolean value.
+ 
 
-The instanceof operator checks whether an object is an instanceof a particular class or not.It returns true or false.
 
-8.Java Ternary Operator
+## StaticAndInstance Program
+**Class AWing**
+   
+    static float MaintainanceBill=30000.50f;     //Static Variable
+		float LightBill=560.70f;	   //Instance Variable
+    
+    void PersonalBill() //Instance method
+        In this method we can print both instance or static variable
+        print(LightBill)
+        
+     static void ChairManBill()
+        In this method only Static variable can print if we have to print instance variable we must have to print it by creating object
+         print(MaintainanceBill)
+    
+**Class BWing**
+  Same as AWing Class only values are changed.
+  
+**Class KrushnaHeights**
+main()
+  Creating Object of both classes and calling methods.
+  Calling Static methods directly by class name
+      AWing.ChairManBill();
+  for instance methods we have create object
+      AWing MateHouse=new AWing();
+      MateHouse.LightBill=585.76f;
 
-variable = Expression ? expression1 : expression2
-If the Expression is true, expression1 is assigned to the variable.
-If the Expression is false, expression2 is assigned to the variable.
+      MateHouse.PersonalBill();
+      
+   ## New Features in Java 11
+   
+   **class NewFeaturesOfJava11**
+   main()
+   var userID=1234; //userID => int In java11 we need not to write dataTypes for each and every variable
+   Strings method
+   1)repeat(int)
+    to print string repetedly
+   2)isBlank()
+      to check string is blank or not and return boolean value 
+   3)strip()
+      Remove white spaces from String
+   4)stripLeading()
+      Remove white spaces from starting of the string
+   5)stripTrailing()
+      Remove white spaces from end of the string
+   6)lines()
+      The lines() method is a static method. It returns a stream of lines extracted from a given multi-line string, separated by line terminators.
+   7/isEmpty()
+      If a value is not present, returns true, otherwise false.
+			
 
-## Static Variable
-A single copy to be shared by all instances of the class
-A static variable can be accessed directly by the class name and doesn’t need any object
-
-## Instance Variable
-Different copies to be shared by all instances of the class
-An instance variable can be accessed only through object 
-
-## Static Method
-A static method can call only other static methods and can not call a non-static method from it.
-A static method can be accessed directly by the class name and doesn’t need any object.
-A static method cannot refer to "this" or "super" keywords in anyway.
-
-## Instance Method
-An instance method can call both static or non-static methods from it.
-We must have to call instance method through the object of a class.
-An instance method can refer to "this" or "super" for particular instance of a class.
