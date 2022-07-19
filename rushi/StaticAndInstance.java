@@ -57,5 +57,9 @@ class KrishnaHeights{
 		JadhavHouse.PersonalBill();//Personal Light Bill of B wing Flat=540.0
 		JadhavHouse.ChairManBill();//Show Total Maintainance Bill of B Wing=35000.5
 		
+		JadhavHouse.PersonalBill();//Personal Light Bill of B wing Flat=540.0
+		JadhavHouse.ChairManBill();//Show Total Maintainance Bill of B Wing=35000.5
+		
+		
 	}
 }
